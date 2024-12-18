@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export function useGetImage(gender ) {
+export function useGetImage(gender, setLoader) {
   const [imageContact, setImageContact] = useState();
+
   const contactImage = async () => {
-    console.log('el generi' , gender);
-    
     try {
+      setLoader(true);
       const response = await fetch(
         `https://randomuser.me/api/?gender=${gender}`
       );
@@ -17,6 +17,8 @@ export function useGetImage(gender ) {
       setImageContact(result.results[0].picture.large);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoader(false);
     }
   };
 
