@@ -22,7 +22,6 @@ function App() {
   };
 
   const addUser = (newUser) => {
-
     setListContact((prevContacts) => [
       ...prevContacts,
       {
@@ -147,7 +146,7 @@ function App() {
               Telefono
               <input
                 className="bg-slate-900 text-white rounded-md w-full p-2 font-normal"
-                type="text"
+                type="Number"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
@@ -164,28 +163,36 @@ function App() {
               <option value="male">Masculino</option>
               <option value="female">Femenino</option>
             </select>
-            <button className="bg-blue-900 p-2 rounded-md text-white">{statusEdit ? "actualizar" : "Registrar"}</button>
+            <button className="bg-blue-900 p-2 rounded-md text-white">
+              {statusEdit ? "actualizar" : "Registrar"}
+            </button>
           </form>
         </div>
-        <ul>
-          {listContact.length > 0 ? (
-            listContact.map((contact) => (
-              <li key={contact.id}>
-                <CardContac
-                  name={contact.name}
-                  phone={contact.phone}
-                  isFavorite={contact.isFavorite}
-                  deleteContact={() => deleteConatc(contact.id)}
-                  favorite={() => favorite(contact.id)}
-                  gender={contact.gender}
-                  editUser={() => editUser(contact)}
-                />
-              </li>
-            ))
-          ) : (
-            <li>No se encontraron contactos</li>
-          )}
-        </ul>
+        <div className="text-center font-semibold">
+          <h1 className="text-2xl">Libreta de Contactos</h1>
+          <ul className="h-[400px] overflow-auto px-5 ">
+            {listContact.length > 0 ? (
+              listContact.map((contact) => (
+                <li
+                  key={contact.id}
+                  className="border-b border-gray-500 py-2"
+                >
+                  <CardContac
+                    name={contact.name}
+                    phone={contact.phone}
+                    isFavorite={contact.isFavorite}
+                    deleteContact={() => deleteConatc(contact.id)}
+                    favorite={() => favorite(contact.id)}
+                    gender={contact.gender}
+                    editUser={() => editUser(contact)}
+                  />
+                </li>
+              ))
+            ) : (
+              <li className="mt-10 text-gray-400">No se encontraron contactos</li>
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );

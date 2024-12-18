@@ -24,6 +24,6 @@ export function useGetImage(gender, setLoader) {
 
   useEffect(() => {
     contactImage();
-  }, []);
+  }, [gender]);
   return { imageContact };
 }

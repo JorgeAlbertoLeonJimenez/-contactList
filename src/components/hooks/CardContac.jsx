@@ -20,7 +20,7 @@ function CardContac({
       {!loader ? (
         <>
           <div
-            className={`flex flex-col mb-3 ${
+            className={`flex flex-col  ${
               imageContact ? "block" : "hidden"
             }`}
           >
@@ -53,12 +53,12 @@ function CardContac({
                     }`}
                   />
                 </p>
-                <div
-                  className="absolute right-3 bottom-3"
+                <button
+                  className="absolute right-3 bottom-3 "
                   onClick={editUser}
                 >
                   <i className="fa-regular fa-pen-to-square" />
-                </div>
+                </button>
               </div>
               <div className="flex gap-1 flex-col ">
                 <button
@@ -83,7 +83,7 @@ function CardContac({
               </div>
             </div>
             {activeDelete && (
-              <div className=" mt-2 flex justify-between gap-3 items-center mb-5">
+              <div className=" mt-2 flex justify-between gap-3 items-center ">
                 <button
                   className="bg-red-600 w-[50%] px-2 py-1 rounded-md"
                   onClick={deleteContact}
