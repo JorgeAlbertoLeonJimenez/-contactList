@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import CardContac from "./components/hooks/cardContac";
+import CardContac from "./components/hooks/CardContac";
 
 function App() {
   const [formData, setFormData] = useState({

@@ -7,7 +7,7 @@ function CardContac({
   favorite,
   isFavorite,
   gender,
-  editUser
+  editUser,
 }) {
   const [activeDelete, setActiveDelete] = useState(false);
   const { imageContact } = useGetImage(gender);
@@ -43,7 +43,10 @@ function CardContac({
               }`}
             />
           </p>
-          <div className="absolute right-3 bottom-3" onClick={editUser}>
+          <div
+            className="absolute right-3 bottom-3"
+            onClick={editUser}
+          >
             <i className="fa-regular fa-pen-to-square" />
           </div>
         </div>
