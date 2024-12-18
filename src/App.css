@@ -1,0 +1,61 @@
+/* From Uiverse.io by Jarol20cb */ 
+
+  
+  .code-container {
+    background-color: #222;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .line {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 4px 0;
+    position: relative;
+  }
+  
+  .code-comment {
+    color: #5c6370;
+  }
+  
+  .code-keyword {
+    color: #c678dd;
+  }
+  
+  .code-function {
+    color: #61afef;
+  }
+  
+  .code-variable {
+    color: #dcdcaa;
+  }
+  
+  .code-string {
+    color: #98c379;
+  }
+  
+  .indent {
+    padding-left: 20px;
+  }
+  
+  /* Animación */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .float-animation {
+    animation: float 2s ease-in-out infinite;
+  }
+  
